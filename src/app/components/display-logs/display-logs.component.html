@@ -1,1 +1,59 @@
-<p>display-logs works!</p>
+<h3> Display Logs</h3>
+<hr>
+<hr>
+<div class="alert alert-danger">
+    <strong [hidden]="errorMessages"> پیام خطایی برای نمایش وجود ندارد!</strong>
+    <div *ngIf="$any(errorMessages)?.length > 0">
+        <h5>Error(s)</h5>
+        <ul>
+            <li *ngFor="let item of errorMessages">{{item}}</li>
+        </ul>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-danger" (click)="clearErrorMessages()">پاک کردن پیام ها</button>
+        </div>
+    </div>
+</div>
+<br>
+<div class="alert alert-warning">
+    <strong [hidden]="warningMessages"> پیام اخطاری برای نمایش وجود ندارد!</strong>
+    <div *ngIf="$any(warningMessages)?.length > 0">
+        <h5>Warning(s)</h5>
+        <ul>
+            <li *ngFor="let item of warningMessages">{{item}}</li>
+        </ul>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-warning" (click)="clearWarningMessages()">پاک کردن پیام ها</button>
+        </div>
+    </div>
+</div>
+<br>
+<div class="alert alert-info">
+    <strong [hidden]="informationMessages"> پیامی اطلاع رسانی برای نمایش وجود ندارد!</strong>
+    <div *ngIf="$any(informationMessages)?.length > 0">
+        <h5>Information(s)</h5>
+        <ul>
+            <li *ngFor="let item of informationMessages">{{item}}</li>
+        </ul>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-info" (click)="clearInformationMessages()">پاک کردن پیام ها</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="alert alert-primary">
+    <strong [hidden]="debugMessages"> پیام دیباگی برای نمایش وجود ندارد!</strong>
+    <div *ngIf="$any(debugMessages)?.length > 0">
+        <h5>Debug(s)</h5>
+        <ul>
+            <li *ngFor="let item of debugMessages">{{item}}</li>
+        </ul>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-primary" (click)="clearDebugMessages()">پاک کردن پیام ها</button>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>

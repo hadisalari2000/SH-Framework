@@ -1,1 +1,65 @@
-<p>test-log-manager works!</p>
+<h3>تست مدیریت خطا</h3>
+<hr>
+<div class="form-group row">
+    <label for="errorMessage" class="col-sm-1 col-form-label"> Error </label>
+    <div class="col-sm-9">
+        <input type="text" class="form-control" id="errorMessage" [(ngModel)]="errorMessage"
+            placeholder="Error Message" required>
+    </div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-danger" (click)="logError()">Log Error</button>
+    </div>
+</div>
+
+<hr>
+
+<div class="form-group row">
+    <label for="warningMessage" class="col-sm-1 col-form-label">Warning</label>
+    <div class="col-sm-9">
+        <input type="text" class="form-control" id="warningMessage" [(ngModel)]="warningMessage"
+            placeholder="Warning Message">
+    </div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-warning" (click)="logWarning()">Log Warning</button>
+    </div>
+</div>
+
+<hr>
+
+<div class="form-group row">
+    <label for="informationMessage" class="col-sm-1 col-form-label">Information</label>
+    <div class="col-sm-9">
+        <input type="text" class="form-control" id="informationMessage" [(ngModel)]="informationMessage"
+            placeholder="Information Message">
+    </div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-info" (click)="logInformation()">Log Information</button>
+    </div>
+</div>
+
+<hr>
+
+<div class="form-group row">
+    <label for="debugMessage" class="col-sm-1 col-form-label">Debug</label>
+    <div class="col-sm-9">
+        <input type="text" class="form-control" id="debugMessage" [(ngModel)]="debugMessage"
+            placeholder="Debug Message">
+    </div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-primary mb-3" (click)="logDebug()">Log Debug</button>
+    </div>
+</div>
+
+
+<hr>
+
+<div class="form-group row">
+    <label for="hiddenMessage" class="col-sm-1 col-form-label">Hidden</label>
+    <div class="col-sm-9">
+        <input type="text" class="form-control" id="hiddenMessage" [(ngModel)]="hiddenMessage"
+            placeholder="Hidden Message">
+    </div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-success" (click)="logHidden()">Log Hidden</button>
+    </div>
+</div>
