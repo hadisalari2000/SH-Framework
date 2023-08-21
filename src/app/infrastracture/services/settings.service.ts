@@ -1,4 +1,3 @@
-import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,7 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class SettingsService {
 
-  constructor() { 
+  //این پارامتر ها رفت داخل کلاس 
+  //ApplicationProperties
+
+  /* constructor() { 
     this.url="http://localhost:8080/";
   }
 
@@ -16,5 +18,5 @@ export class SettingsService {
     headers:new HttpHeaders({
       'Content-Type':'aplication/json'
     })
-  };
+  }; */
 }

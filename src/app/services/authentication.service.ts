@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SettingsService } from './settings.service';
+import { SettingsService } from '../infrastracture/services/settings.service';
 import { LogManagerService } from './log-manager.service';
 import { User } from '../models/user';
-import { Observable,map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { HttpRequestResult } from '../models/http-request-result';
+import { Utility } from '../infrastracture/utilities/utility';
+import { ApplicationProperties } from '../infrastracture/utilities/applicationProperties';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +23,7 @@ export class AuthenticationService {
 
   public login(username: string, password: string): Observable<HttpRequestResult<User>> {
 
-    let requestUrl: string = this.settingService.url + 'Account/Login';
+    let requestUrl: string = ApplicationProperties.baseUrl + 'Account/Login';
     let requestData = { 'username': username, 'password': password };
 
     /* 1 */
@@ -38,18 +40,9 @@ export class AuthenticationService {
 
 
     /* 3 */
-    return this.http.post<HttpRequestResult<User>>(requestUrl, requestData, this.settingService.httpOptions)
+    return this.http.post<HttpRequestResult<User>>(requestUrl, requestData, ApplicationProperties.httpOptions)
       .pipe(map(result => {
-        
-        for(let index:number=0;index<result.errorMessages.length;index++){
-          this.logManagerService.logError(result.errorMessages[index]);
-        }
-        for(let index:number=0;index<result.informationMessages.length;index++){
-          this.logManagerService.logInformation(result.informationMessages[index]);
-        }
-        for(let index:number=0;index<result.hiddenMessages.length;index++){
-          this.logManagerService.logHidden(result.hiddenMessages[index]);
-        }
+        Utility.log(result, this.logManagerService);
         this.currentUser = result.data;
         return result;
       }));

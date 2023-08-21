@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 
+import { UaaModule } from './modules/uaa/uaa.module';
+
+import { PostsModule } from './modules/posts/posts.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -28,14 +31,22 @@ import { TestLogManagerComponent } from './components/test-log-manager/test-log-
     NavbarComponent,
     DisplayLogsComponent,
     PageNotFoundComponent,
-    TestLogManagerComponent
+    TestLogManagerComponent,
   ],
   imports: [
+
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+
+    UaaModule,
+    PostsModule,
+    
+    //این باید آخرین ماژول باشد برای اینکه برای
+    //Routing
+    //داستان پیش نیاد
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
