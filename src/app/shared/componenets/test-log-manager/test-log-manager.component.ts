@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LogManagerService } from 'src/app/services/log-manager.service';
+import { LogManagerService } from 'src/app/shared/services/log-manager.service';
 
 @Component({
   selector: 'app-test-log-manager',

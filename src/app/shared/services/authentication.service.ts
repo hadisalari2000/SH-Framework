@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SettingsService } from '../infrastracture/services/settings.service';
+import { SettingsService } from '../../infrastracture/services/settings.service';
 import { LogManagerService } from './log-manager.service';
 import { User } from '../models/user';
 import { Observable, map } from 'rxjs';
 import { HttpRequestResult } from '../models/http-request-result';
-import { Utility } from '../infrastracture/utilities/utility';
-import { ApplicationProperties } from '../infrastracture/utilities/applicationProperties';
+import { Utility } from '../../infrastracture/utilities/utility';
+import { ApplicationProperties } from '../../infrastracture/utilities/applicationProperties';
 
 @Injectable({
   providedIn: 'root'

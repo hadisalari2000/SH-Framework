@@ -4,21 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 
-import { UaaModule } from './modules/uaa/uaa.module';
-
 import { PostsModule } from './modules/posts/posts.module';
+import { UaaModule } from './modules/uaa/uaa.module';
+import { GlobalModule } from './modules/global/global.module';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { AlertComponent } from './components/alert/alert.component';
-import { LoginComponent } from './components/login/login.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { DisplayLogsComponent } from './components/display-logs/display-logs.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { TestLogManagerComponent } from './components/test-log-manager/test-log-manager.component';
+import { HomeComponent } from './modules/global/componenets/home/home.component';
+import { AboutComponent } from './modules/global/componenets/about/about.component';
+import { ContactComponent } from './modules/global/componenets/contact/contact.component';
+import { AlertComponent } from './shared/componenets/alert/alert.component';
+import { LoginComponent } from './shared/componenets/login/login.component';
+import { NavbarComponent } from './shared/componenets/navbar/navbar.component';
+import { DisplayLogsComponent } from './shared/componenets/display-logs/display-logs.component';
+import { PageNotFoundComponent } from './shared/componenets/page-not-found/page-not-found.component';
+import { TestLogManagerComponent } from './shared/componenets/test-log-manager/test-log-manager.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { TestLogManagerComponent } from './components/test-log-manager/test-log-
 
     UaaModule,
     PostsModule,
+    GlobalModule,
     
     //این باید آخرین ماژول باشد برای اینکه برای
     //Routing

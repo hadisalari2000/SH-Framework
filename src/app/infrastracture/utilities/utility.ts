@@ -1,5 +1,5 @@
-import { HttpRequestResult } from "src/app/models/http-request-result";
-import { LogManagerService } from "src/app/services/log-manager.service";
+import { HttpRequestResult } from "src/app/shared/models/http-request-result";
+import { LogManagerService } from "src/app/shared/services/log-manager.service";
 
 export class Utility{
 
